@@ -21,12 +21,22 @@ conn = pymysql.connect(
 
 c = conn.cursor()
 c.execute("SELECT * FROM userinfo")
-data = [(row[1], row[2], row[3], row[4], row[5]) for row in c.fetchall()]
+datalis = [(row[1], row[2], row[3], row[4], row[5]) for row in c.fetchall()]
+datadic = []
+for row in datalis:
+    temp = {
+        "nama" : row[0],
+        "nrp" : row[1],
+        "info" : row[2],
+        "img" : row[3],
+        "jurusan" : row[4],
+    }
+    datadic.append(temp)
 
 fhtml = open("index.html",'r').read()
 template = Template(fhtml)
 
 print(template.render(
-    info = data,
-    leng = len(data)
+    info = datadic,
+    leng = len(datadic)
     ))

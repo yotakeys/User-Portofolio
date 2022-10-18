@@ -19,28 +19,29 @@
             {% for i in range(leng) %}
             <div class="card">
                 <div class="image">
-                    <img src={{info[i][3]}} alt="kalyana">
+                    <img src={{info[i]["img"]}} alt="kalyana">
                 </div>
                 <table>
                     <tr>
                         <th>Nama</th>
-                        <td>: {{info[i][0]}}</td>
+                        <td>: {{info[i]["nama"]}}</td>
                     </tr>
                     <tr>
                         <th>NRP</th>
-                        <td>: {{info[i][1]}}</td>
+                        <td>: {{info[i]["nrp"]}}</td>
                     </tr>
                     <th>Jurusan</th>
-                    <td>: {{info[i][4]}}</td>
+                    <td>: {{info[i]["jurusan"]}}</td>
                     </tr>
                     <tr>
                         <th>Tentang</th>
-                        <td>: {{info[i][2]}}</td>
+                        <td>: {{info[i]["info"]}}</td>
                     </tr>
                     <tr>
                 </table>
             </div>
             {% endfor %}
+            <br>
         </div>
     </div>
 </body>
