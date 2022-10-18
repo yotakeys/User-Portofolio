@@ -1,8 +1,0 @@
-db :
-userporto
-user :
-root
-passwd :
-Keyisa_2004
-host :
-localhost
