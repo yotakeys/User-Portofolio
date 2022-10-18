@@ -21,11 +21,12 @@ conn = pymysql.connect(
 
 c = conn.cursor()
 c.execute("SELECT * FROM userinfo")
-data = [(row[1], row[2], row[3], row[4]) for row in c.fetchall()]
+data = [(row[1], row[2], row[3], row[4], row[5]) for row in c.fetchall()]
 
 fhtml = open("index.html",'r').read()
 template = Template(fhtml)
 
 print(template.render(
-    info = data
+    info = data,
+    leng = len(data)
     ))

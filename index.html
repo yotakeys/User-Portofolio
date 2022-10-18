@@ -1,116 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>NCC LBE 22</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>FP LBE NCC 22</title>
 </head>
+
 <body>
     <h1>FP LBE NCC 22</h1>
     <div class="container">
         <div class="card-container">
+            {% for i in range(leng) %}
             <div class="card">
                 <div class="image">
-                    <img src="Mina.jpeg" alt="kalyana">
+                    <img src={{info[i][3]}} alt="kalyana">
                 </div>
                 <table>
                     <tr>
                         <th>Nama</th>
-                        <td>Yotakeys</td>
-                    </tr>
-                    <tr>
-                        <th>TTL</th>
-                        <td>22 - 12 - 2002</td>
-                    </tr>
-                    <tr>
-                        <th>Jurusan</th>
-                        <td>Teknik Informatika</td>
+                        <td>: {{info[i][0]}}</td>
                     </tr>
                     <tr>
                         <th>NRP</th>
-                        <td>5025211002</td>
+                        <td>: {{info[i][1]}}</td>
                     </tr>
+                    <th>Jurusan</th>
+                    <td>: {{info[i][4]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Tentang</th>
+                        <td>: {{info[i][2]}}</td>
+                    </tr>
+                    <tr>
                 </table>
             </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                <div class="image">
-                    <img src="Mina.jpeg" alt="kalyana">
-                </div>
-                <table>
-                    <tr>
-                        <th>Nama</th>
-                        <td>Yotakeys</td>
-                    </tr>
-                    <tr>
-                        <th>TTL</th>
-                        <td>22 - 12 - 2002</td>
-                    </tr>
-                    <tr>
-                        <th>Jurusan</th>
-                        <td>Teknik Informatika</td>
-                    </tr>
-                    <tr>
-                        <th>NRP</th>
-                        <td>5025211002</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <div class="card-container">
-            <div class="card">
-                <div class="image">
-                    <img src="Mina.jpeg" alt="none">
-                </div>
-                <table>
-                    <tr>
-                        <th>Nama</th>
-                        <td>Yotakeys</td>
-                    </tr>
-                    <tr>
-                        <th>TTL</th>
-                        <td>22 - 12 - 2002</td>
-                    </tr>
-                    <tr>
-                        <th>Jurusan</th>
-                        <td>Teknik Informatika</td>
-                    </tr>
-                    <tr>
-                        <th>NRP</th>
-                        <td>5025211002</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card">
-                <div class="image">
-                    <img src="Mina.jpeg" alt="kanza">
-                </div>
-                <table>
-                    <tr>
-                        <th>Nama</th>
-                        <td>Yotakeys</td>
-                    </tr>
-                    <tr>
-                        <th>TTL</th>
-                        <td>22 - 12 - 2002</td>
-                    </tr>
-                    <tr>
-                        <th>Jurusan</th>
-                        <td>Teknik Informatika</td>
-                    </tr>
-                    <tr>
-                        <th>NRP</th>
-                        <td>5025211002</td>
-                    </tr>
-                </table>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </body>
+
 </html>
