@@ -1,0 +1,124 @@
+:root{
+    --dark: #091921;
+    --light: #edf1f4;
+
+    --white-900: #fff;
+    --white-800: #f2f2f2;
+    --gray-300: #333;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=Raleway:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    transition: .5s;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1{
+    margin-top: 2em;
+    padding: 1em 3em;
+    border:.2px solid aqua;
+    border-radius: 10px;
+    color: aqua;
+}
+
+h1:hover{
+    color: rgb(16, 116, 116);
+    background: aqua;
+    box-shadow: 0 0 5px aqua,
+                0 0 10px aqua,
+                0 0 20px aqua;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: red; */
+    padding: 8em 0;
+}
+
+.card-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 250px;
+    /* background: gray; */
+}
+
+.card{
+    position: absolute;
+    border: .1px solid aqua;
+    /* background: aqua; */
+    border-radius: 5px;
+    height: 100px; width: 100px;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition-delay: 1s; */
+    /* overflow: hidden; */
+}
+
+.image{
+    position: absolute;
+    height: 100px; width: 100px;
+    z-index: 10;
+    top: -30px; left: -30px;
+}
+
+.image img{
+    height: 100%; 
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+table{
+    display: none;
+    /* transition: 1s; */
+    color: var(--light);    
+}
+
+th{
+    display: flex;
+    align-items: flex-start;
+}
+
+.card:hover{
+    width: auto;
+    height: auto;
+    padding: 2em;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+.card:hover .image{
+    transform: translateX(-30px) translateY(-30px);
+}
+
+.card:hover table{
+    display: flex;
+    color: var(--light);
+}
+
+.card:hover th, .card:hover td{
+    padding: 3px;
+}
