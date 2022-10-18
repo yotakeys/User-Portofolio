@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,vim
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,vim
 
+config.txt
+
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
