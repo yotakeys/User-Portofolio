@@ -10,33 +10,40 @@ import pymysql
 
 from config import connectDB
 
-#connect db
-config = connectDB()
-conn = pymysql.connect(
-    db = config["db"],
-    user = config["user"],
-    passwd = config["passwd"],
-    host = config["host"]
-    )
+if __name__ == "__main__":
 
-c = conn.cursor()
-c.execute("SELECT * FROM userinfo")
-datalis = [(row[1], row[2], row[3], row[4], row[5]) for row in c.fetchall()]
-datadic = []
-for row in datalis:
-    temp = {
-        "nama" : row[0],
-        "nrp" : row[1],
-        "info" : row[2],
-        "img" : row[3],
-        "jurusan" : row[4],
-    }
-    datadic.append(temp)
+    #connect db
+    config = connectDB()
+    try:
+        conn = pymysql.connect(
+            db = config["db"],
+            user = config["user"],
+            passwd = config["passwd"],
+            host = config["host"]
+            )
+    except Exception:
+        print("DATABASE CONNECTION ERROR")
+        exit()
+        
 
-fhtml = open("index.html",'r').read()
-template = Template(fhtml)
+    c = conn.cursor()
+    c.execute("SELECT * FROM userinfo")
+    datalis = [(row[1], row[2], row[3], row[4], row[5]) for row in c.fetchall()]
+    datadic = []
+    for row in datalis:
+        temp = {
+            "nama" : row[0],
+            "nrp" : row[1],
+            "info" : row[2],
+            "img" : row[3],
+            "jurusan" : row[4],
+        }
+        datadic.append(temp)
 
-print(template.render(
-    info = datadic,
-    leng = len(datadic)
-    ))
+    fhtml = open("index.html",'r').read()
+    template = Template(fhtml)
+
+    print(template.render(
+        info = datadic,
+        leng = len(datadic)
+        ))
