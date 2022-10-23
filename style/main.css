@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: 0.5s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 20px;
+  background: #091921;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body h1 {
+  position: relative;
+  padding: 1em 3em;
+  border: 0.2px solid aqua;
+  border-radius: 10px;
+  color: aqua;
+}
+body h1:hover {
+  box-shadow: 0 0 5px aqua, 0 0 10px aqua, 0 0 20px aqua;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5em 0;
+}
+.container .card-container {
+  position: relative;
+  justify-content: center;
+  width: 700px;
+  height: 150px;
+}
+.container .card-container .card {
+  position: relative;
+  border: 0.1px solid aqua;
+  border-radius: 5px;
+  padding: 2em;
+  transition: 1s;
+  margin-bottom: 5em;
+  justify-content: center;
+  align-items: center;
+}
+.container .card-container .card .image {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  z-index: 10;
+  top: -20%;
+  left: -10%;
+}
+.container .card-container .card .image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+}
+.container .card-container .card table {
+  display: block;
+  color: #edf1f4;
+}
+.container .card-container .card table th {
+  display: flex;
+  align-items: flex-start;
+  padding-right: 5em;
+}
+.container .card-container .card table tr:not(:last-child) td {
+  padding-bottom: 1em;
+}/*# sourceMappingURL=main.css.map */
